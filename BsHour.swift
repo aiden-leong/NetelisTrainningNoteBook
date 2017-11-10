@@ -69,7 +69,16 @@ class Time {
 //AddBsHour
 var bsHour = BsHour()
 let fromTime:Time? = Time(MinFormat: 123)
-let toTime:Time? = Time(MinFormat: 456)
+print("fromTime.minFromZero = \(String(describing: fromTime?.minFromZero))")
+let toTime:Time? = Time(HourMinFormat: 4, min: 56)
+print("toTime.minFromZero = \(toTime?.minFromZero)")
 let timeRangeBS = fromTime!.timeRangeBsFormat(toTime: toTime!)
 bsHour.add(timeRangeBS: timeRangeBS)
+
+/* print result:
+ 
+ fromTime.minFromZero = Optional(123)
+ toTime.minFromZero = Optional(296)
+ 
+ */
 
